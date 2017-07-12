@@ -25,7 +25,6 @@ LABEL com.redhat.component="$NAME" \
 # Add neccessary configuration files
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/service.template /exports/hostfs/usr/lib/systemd/system/nginx-container.service
-COPY files/nginx.repo /etc/yum.repos.d/
 COPY root/* /
 
 RUN dnf install -y --nodocs nginx
