@@ -21,3 +21,6 @@ endif
 
 shell:
 	docker run -it $(IMAGE_NAME) bash
+
+test:
+	cd tests; MODULE=docker MODULEMD=$(MODULEMDURL) URL="docker=$(IMAGE_NAME)" make all

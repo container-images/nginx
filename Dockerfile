@@ -1,4 +1,4 @@
-FROM baseruntime/baseruntime:latest
+FROM modularitycontainers/boltron-preview:latest
 
 # Image metadata
 ENV NAME=nginx \
@@ -28,7 +28,7 @@ COPY files/service.template /exports/hostfs/usr/lib/systemd/system/nginx-contain
 COPY files/nginx.repo /etc/yum.repos.d/
 COPY root/* /
 
-RUN microdnf install --enablerepo nginx nginx
+RUN dnf install -y --nodocs nginx
 
 RUN mkdir -p /exports/hostfs/{usr/share,etc} && \
     cp -ar /usr/share/nginx /exports/hostfs/usr/share/ && \
