@@ -33,6 +33,9 @@ There are no environment variables to be set.
 -p 8080:80
 	Exposes port 80 on the container and forwards it to port 8080 on the host. 
 
+-v $DIR:/var/www/html/
+	Mounts path $DIR as a web root.
+
 This container runs as root user.
 
 # HISTORY

@@ -1,4 +1,6 @@
-.TH "NGINX " "1" " Container Image Pages" "Jan Koscielniak" "June 19, 2017"  ""
+.TH "NGINX " "1" " Container Image Pages" "Jan Koscielniak" "June 19, 2017" 
+.nh
+.ad l
 
 
 .SH NAME
@@ -45,7 +47,7 @@ $DIR in this context is the root of your web application.
 
 .PP
 Image can also be run in Openshift. You can obtain the template in the repository of this image \- 
-\[la]https://github.com/container-images/nginx\[ra]. You also need to have SCC RunAsUser set to RunAsAny. Then run:
+\[la]https://github.com/container-images/nginx\[ra]\&. You also need to have SCC RunAsUser set to RunAsAny. Then run:
 
 .PP
 .RS
@@ -66,6 +68,10 @@ There are no environment variables to be set.
 .PP
 \-p 8080:80
     Exposes port 80 on the container and forwards it to port 8080 on the host.
+
+.PP
+\-v $DIR:/var/www/html/
+    Mounts path $DIR as a web root.
 
 .PP
 This container runs as root user.
